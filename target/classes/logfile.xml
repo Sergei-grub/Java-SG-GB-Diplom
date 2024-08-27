@@ -1,0 +1,37 @@
+<configuration>
+
+    <property name="HOME_LOG" value="/var/log/gb-sg-diplomBot/bot.log"/>
+
+
+    <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${HOME_LOG}</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>/var/log/gb-sg-diplomBot/bot.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+
+            <!-- максимальный размер файла журнала 10 MB -->
+            <maxFileSize>10MB</maxFileSize>
+            <!-- максимальный суммарный размер файлов до начала удаления самых старых - 100 MB -->
+            <totalSizeCap>100MB</totalSizeCap>
+            <!-- срок хранения файла — 50 дней -->
+            <maxHistory>50</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d %p %c{1.} [%t] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="io.proj3ct.SpringDemoBot" level="debug" additivity="false">
+        <appender-ref ref="FILE-ROLLING"/>
+    </logger>
+
+    <root level="error">
+        <appender-ref ref="FILE-ROLLING"/>
+    </root>
+
+    <root level="info">
+        <appender-ref ref="FILE-ROLLING"/>
+    </root>
+
+</configuration>

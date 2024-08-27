@@ -1,0 +1,6 @@
+gb\sgdiplom\SGJavaBotDiplom\SgJavaBotDiplomApplication.class
+gb\sgdiplom\SGJavaBotDiplom\service\TelegramBot.class
+gb\sgdiplom\SGJavaBotDiplom\model\UserRepository.class
+gb\sgdiplom\SGJavaBotDiplom\config\BotInit.class
+gb\sgdiplom\SGJavaBotDiplom\config\BotConfig.class
+gb\sgdiplom\SGJavaBotDiplom\model\User.class
